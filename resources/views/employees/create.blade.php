@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Enter an asset</h1>
+    <h1>Enter an Employee</h1>
     <div>
         @if($errors->any())
         <ul>
@@ -17,27 +17,24 @@
         </ul>
         @endif
     </div>
-    <form method="post" action="{{ route('asset.store') }}">
+    <form method="post" action="{{ route('employee.store') }}">
         @csrf
         @method('post')
-        <div>
-            <label>Employee ID</label>
-            <input type="text" name="employee_id" placeholder="Employee ID"/>
+            <label>First Name</label>
+            <input type="text" name="name" placeholder="First Name"/>
+        </div>
+            <label>Last Name</label>
+            <input type="text" name="last_name" placeholder="Last Name"/>
+        </div>
+            <label>Phone Number</label>
+            <input type="text" name="phone_number" placeholder="Name"/>
         </div>
         <div>
-            <label>Item</label>
-            <input type="text" name="item" placeholder="Item"/>
+            <label>Email</label>
+            <input type="text" name="email" placeholder="Email"/>
         </div>
         <div>
-            <label>Model</label>
-            <input type="text" name="model" placeholder="Model"/>
-        </div>
-        <div>
-            <label>Serial</label>
-            <input type="text" name="serial" placeholder="Serial"/>
-        </div>
-        <div>
-            <input type='submit' value="Add Asset">
+            <input type='submit' value="Add Employee">
         </div>
 
     </form>

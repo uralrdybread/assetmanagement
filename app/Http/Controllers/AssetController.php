@@ -18,6 +18,7 @@ class AssetController extends Controller
 
     public function store(Request $request) {
         $data = $request->validate([
+            'employee_id' => 'required',
             'item' => 'required',
             'model' => 'required',
             'serial' => 'required'
@@ -28,9 +29,11 @@ class AssetController extends Controller
         return redirect(route('asset.index'));
     }
 
+
     public function edit(Asset $asset) {
         return view('assets.edit', ['asset' => $asset]);
     }
+
 
     public function update(Asset $asset, Request $request) {
             $data = $request->validate([

@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Assets</h1>
+    <h1>Employees</h1>
     <div>
         @if(session()->has('success'))
         <div>
@@ -17,29 +17,30 @@
     </div>
     <div>
         <div>
-            <a href="{{route('asset.create')}}">Log a New Asset</a>
+            <a href="{{route('employee.create')}}">Enter a new Employee</a>
         </div>
         <table border='1'>
             <tr>
                 <th>Employee ID</th>
-                <th>Item</th>
-                <th>Model</th>
-                <th>Serial</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone Number</th>
+                <th>Email</th>
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
-            @foreach($assets as $asset)
+            @foreach($employees as $employee)
             <tr>
-                <td>{{$asset->employee_id}}</td>
-                <td>{{$asset->item}}</td>
-                <td>{{$asset->model}}</td>
-                <td>{{$asset->serial}}</td>
+                <td>{{$employee->id}}</td>
+                <td>{{$employee->name}}</td>
+                <td>{{$employee->last_name}}</td>
+                <td>{{$employee->phone_number}}</td>
+                <td>{{$employee->email}}</td>
                 <td>
-                    <a href="{{route('asset.edit', ['asset' => $asset])}}">Edit</a>
-                    {{-- {{ dd($asset) }} --}}
+                    <a href="{{route('employee.edit', ['employee' => $employee])}}">Edit</a>
                 </td>
                 <td>
-                    <form method="post" action="{{route('asset.delete', ['asset' => $asset])}}">
+                    <form method="post" action="{{route('employee.delete', ['employee' => $employee])}}">
                         @csrf
                         @method('delete')
                         <input type="submit" value="delete">
