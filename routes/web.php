@@ -33,3 +33,4 @@ Route::get('/employee/{employee}/edit', [EmployeeController::class, 'edit'])->na
 Route::delete('/employee/{employee}/delete', [EmployeeController::class, 'delete'])->name('employee.delete');
 Route::get('/employee/create', [EmployeeController::class, 'create'])->name('employee.create');
 Route::post('/employee', [EmployeeController::class, 'store'])->name('employee.store');
+Route::get('/employee/{id}', [EmployeeController::class, 'show'])->name('employee.show');

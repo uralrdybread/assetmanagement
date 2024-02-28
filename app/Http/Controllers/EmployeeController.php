@@ -51,4 +51,9 @@ class EmployeeController extends Controller
 
         return redirect(route('employee.index'))->with('success', 'Employee Deleted Successfully');
     }
+
+    public function show($id) {
+        $employee = Employee::findOrFail($id);
+        return view('employees.show', ['employee' => $employee]);
+    }
 }

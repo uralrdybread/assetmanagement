@@ -25,7 +25,7 @@
                 </thead>
             @foreach($assets as $asset)
             <tr>
-                <td>{{$asset->employee_id}}</td>
+                <td><a href="{{ route('employee.show', ['id' => $asset->employee_id]) }}">{{ $asset->employee_id }}</a></td>
                 <td>{{$asset->item}}</td>
                 <td>{{$asset->model}}</td>
                 <td>{{$asset->serial}}</td>
