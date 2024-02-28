@@ -1,5 +1,6 @@
 body {
     font-family: Poppins, sans-serif;
+    background-color: #b3c2e6;
 }
 
 .employee-table {
@@ -59,7 +60,6 @@ tr:nth-child(even) {
 .btn {
     background-color: #546db5;
     color: white;
-    text-transform: uppercase;
     letter-spacing: 0.05rem;
     border-radius: 0.3rem;
     padding: 0.7rem 2rem;
@@ -97,3 +97,44 @@ tr:nth-child(even) {
     display: flex;
     justify-content: center;
 }
+
+/* data entry begins */
+
+.addedit {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #546db5;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* data entry ends */

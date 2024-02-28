@@ -10,7 +10,7 @@
         </ul>
         @endif
     </div>
-    <form method="post" action="{{ route('employee.store') }}">
+    <form class="addedit" method="post" action="{{ route('employee.store') }}">
         @csrf
         @method('post')
             <label>First Name</label>

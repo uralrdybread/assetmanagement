@@ -10,7 +10,7 @@
         </ul>
         @endif
     </div>
-    <form method="post" action="{{route('employee.update', ['employee' => $employee])}}">
+    <form class="addedit" method="post" action="{{route('employee.update', ['employee' => $employee])}}">
         @csrf
         @method('put')
         <div>
