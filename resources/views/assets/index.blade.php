@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
+<x-layout>
 <body>
     <h1>Assets</h1>
     <div>
@@ -16,18 +9,20 @@
         @endif
     </div>
     <div>
-        <div>
-            <a href="{{route('asset.create')}}">Log a New Asset</a>
+        <div class="log-button">
+            <button onclick="window.location='{{ route('asset.create') }}'" class="btn btn-log">Log a New Asset</button>
         </div>
-        <table border='1'>
-            <tr>
-                <th>Employee ID</th>
-                <th>Item</th>
-                <th>Model</th>
-                <th>Serial</th>
-                <th>Edit</th>
-                <th>Delete</th>
-            </tr>
+        <table class="asset-table">
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Item</th>
+                    <th>Model</th>
+                    <th>Serial</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                </thead>
             @foreach($assets as $asset)
             <tr>
                 <td>{{$asset->employee_id}}</td>
@@ -35,14 +30,20 @@
                 <td>{{$asset->model}}</td>
                 <td>{{$asset->serial}}</td>
                 <td>
-                    <a href="{{route('asset.edit', ['asset' => $asset])}}">Edit</a>
-                    {{-- {{ dd($asset) }} --}}
+                    <form method="get" action="{{ route('asset.edit', ['asset' => $asset]) }}">
+                    @csrf
+                        <button type="submit" class="btn btn-edit" ><span class="material-symbols-outlined">edit</span>
+                        </button>
+                    </form>
                 </td>
                 <td>
                     <form method="post" action="{{route('asset.delete', ['asset' => $asset])}}">
                         @csrf
                         @method('delete')
-                        <input type="submit" value="delete">
+                        <button type="submit" class="btn btn-delete">
+                        <span class="material-symbols-outlined">
+                            delete
+                        </span></button>
                     </form>
                 </td>
             </tr>
@@ -50,4 +51,4 @@
         </table>
     </div>
 </body>
-</html>
+</x-layout>

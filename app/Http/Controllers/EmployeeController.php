@@ -19,6 +19,8 @@ class EmployeeController extends Controller
     public function store(Request $request) {
         $data = $request->validate([
             'name' => 'required',
+            'last_name' => 'required',
+            'phone_number' => 'required',
             'email' => 'required'
         ]);
 
@@ -33,8 +35,10 @@ class EmployeeController extends Controller
 
     public function update(Employee $employee, Request $request) {
             $data = $request->validate([
-                'name' => 'required',
-                'email' => 'required'
+            'name' => 'required',
+            'last_name' => 'required',
+            'phone_number' => 'required',
+            'email' => 'required'
         ]);
 
         $employee->update($data);

@@ -19,6 +19,10 @@ return new class extends Migration
             $table->string('email');
             $table->timestamps();
         });
+
+        // Starts the id count at a number besides 1 to add a little ambiguity
+        DB::statement("ALTER TABLE employees AUTO_INCREMENT = 1005250;");
+        
     }
 
     /**
