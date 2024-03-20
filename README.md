@@ -1,3 +1,23 @@
+# Simple Asset Management
+
+## Goals
+
+- **Decent Looking UI**: Set up a management UI with responsive buttons to ensure a visually pleasing user experience.
+
+- **Database Relationship**: Establish a one-to-many relationship in the database to link assets to the employees they are currently assigned to.
+
+- **Anonymous Employee ID System**: Implement a more anonymous type of employee ID system where the count auto-increment starts at 1005250. This was achieved using the following line of code:
+
+    ```php
+    DB::statement("ALTER TABLE employees AUTO_INCREMENT = 1005250;");
+    ```
+
+![assets](https://github.com/uralrdybread/assetmanagement/assets/48900828/bd21fbb2-846d-42fb-8f60-47ded8395347)
+![employee](https://github.com/uralrdybread/assetmanagement/assets/48900828/7f2a7968-b8c3-43af-99b3-767fec94121d)
+![main](https://github.com/uralrdybread/assetmanagement/assets/48900828/25aa726d-879d-4bdf-a587-1f02e9b5b00b)
+![whoownsasset](https://github.com/uralrdybread/assetmanagement/assets/48900828/0692b430-bd4c-4e60-8f7f-e49ffa37aa6b)
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
